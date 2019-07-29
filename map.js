@@ -8,11 +8,11 @@ class Map {
                    maxZoom: 20
         }).addTo(this.map);
 
-        // ajout d'un markeur
-        //var marker = L.marker(nancy).addTo(map);
+        /* ajout d'un markeur
+        var marker = L.marker(nancy).addTo(map);
 
-        // ajout d'un popup
-        //marker.bindPopup("<h3> Nancy, France </h3>");
+        ajout d'un popup
+        marker.bindPopup("<h3> Nancy, France </h3>");*/
     }
     
         // recuperation données API
@@ -24,7 +24,12 @@ class Map {
             stations.forEach(station => {               
                 //console.log(station.name, station.totalStands.availabilities.bikes ); 
                 //console.log(station.position.latitude, station.position.longitude);
-                L.marker([station.position.latitude, station.position.longitude]).addTo(this.map);
+                const marker = L.marker([station.position.latitude, station.position.longitude]).addTo(this.map);
+                marker.addEventListener("click", ()=> {
+                    document.getElementById("location").textContent = station.address;
+                    document.getElementById("room").textContent = station.totalStands.capacity;
+                    document.getElementById("availability").textContent = station.totalStands.availabilities.bikes;
+                })             
             });
         });
     }

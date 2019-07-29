@@ -8,27 +8,52 @@
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
     <link rel="stylesheet" href="style.css" />
-    <title>Ma page web</title>
-     
+    <title>Ma page web</title>     
 </head>
 
 <body>
     
-    <div id="map"></div>
-    <div id="encart">
-        <h2>Détails de la station</h2>
-        <p>Adresse: <span id="location"></span></p>
-        <p>places: <span id="room"></span></p>
-        <p>vélos disponible: <span id="availability"></span></p>
-    </div>
+    <header>
+        <div id=""></div>
+    </header>
     
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-    <script src="./ajax.js"></script>
-    <script src="./map.js"></script>
-    <script src="./init.js"></script>
+    <section id="1">
+         <div id="banner"></div>
+         <div id="slider"></div>
+    </section>
+
+    <section id="section_2">
+        <div id="map"></div>
+        <div id="encart">
+            <h2>Détails de la station</h2>
+            <p>Adresse: <span id="location"></span></p>
+            <p>places: <span id="room"></span></p>
+            <p>vélos disponible: <span id="availability"></span></p>
+            <form>                
+                <div class="label">
+                    <label for="Nom">Nom</label> : <input type="text" placeholder="Duchamps" name="Nom" autofocus  id="lastname" /><br>
+                </div>
+                <div class="label">
+                    <label for="Prenom">Prénom</label> :<input type="text" placeholder="Jean" name="Prenom" id="firstname" /><br>
+                </div>
+                <div class="label">
+                    <input type="button" value="Réserver" id="booking" />  
+                </div>
+            </form>
+        </div>
+        
+    </section>
     
+    <canvas id="canvas" width="300" height="300">Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
+
+            <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+           integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+           crossorigin=""></script>
+            <script src="./ajax.js"></script>
+            <script src="./map.js"></script>
+            <script src="./init.js"></script>
+            <script src="./storage.js"></script>
+
     
 </body>
 

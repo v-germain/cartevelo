@@ -38,5 +38,11 @@ class Canvas {
         this.canvas.addEventListener('mouseup', (e) => {
           this.draw = false;
         });
+            
+        document.getElementById("booking").addEventListener("click", () => {
+        document.getElementById("canvas_container").classList.remove("none");
+        document.getElementById("canvas_container").classList.add("display");
+    })
+
     }
 }

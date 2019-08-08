@@ -25,7 +25,7 @@ class Map {
                 //console.log(station.name, station.totalStands.availabilities.bikes ); 
                 //console.log(station.position.latitude, station.position.longitude);
                 const marker = L.marker([station.position.latitude, station.position.longitude]).addTo(this.map);
-                marker.addEventListener("click", ()=> {
+                marker.addEventListener("click", () => {
                     document.getElementById("location").textContent = station.address;
                     document.getElementById("room").textContent = station.totalStands.capacity;
                     document.getElementById("availability").textContent = station.totalStands.availabilities.bikes;
@@ -34,3 +34,19 @@ class Map {
         });
     }
 }
+
+/* global sessionStorage */
+
+const bookingButton = document.getElementById("booking");
+
+bookingButton.addEventListener("click", () => {
+    const lastName = document.getElementById("lastname").value;
+    const firstName = document.getElementById("firstname").value;
+    const localStation = document.getElementById("location").value;
+    localStorage.setItem("lastName", lastName);
+    localStorage.setItem("firstName", firstName);
+    localStorage.setItem("location", localStation);
+    console.log(localStorage.getItem("firstName"), localStorage.getItem("lastName"));
+    document.getElementById("canvas_container").classList.remove("none");
+    document.getElementById("canvas_container").classList.add("display");
+});

@@ -14,12 +14,54 @@
 <body>
     
     <header>
-        <div id=""></div>
+        <div id="logo">
+            <img src="images/Upright_urban_bicyclist1.jpg" />
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#logo">Accueil</a>
+                </li>
+                <li>
+                    <a href="#slider_container">Diaporama</a>
+                </li>
+                <li>                    
+                    <a href="#section_2">Réservation</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     
-    <section id="1">
-         <div id="banner"></div>
-         <div id="slider"></div>
+    <section id="section_1">
+        
+        <div id="banner"></div>
+        
+        <div id="slider_container">
+            <!--<div class="slides fade">
+                <img src="images/slide1.jpg">
+                <div class="caption text">text test</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/slide2.jpg">
+                <div class="caption text">text test</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/slide3.jpg">
+                <div class="caption text">text test</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/slide4.jpg">
+                <div class="caption text">text test</div>
+            </div>-->
+            <a id="prev">&#10094;</a>
+            <a id="stop" class="display">&#9616;&#9616;</a>
+            <a id="play" class="none">&#9658;</a>
+            <a id="next">&#10095;</a>
+            <figure id="diaporama">
+                <img id="imgSlider" src="images/slide1.jpg" />
+            </figure>
+        </div>
+        
     </section>
 
     <section id="section_2">
@@ -29,7 +71,7 @@
             <p>Adresse: <span id="location"></span></p>
             <p>places: <span id="room"></span></p>
             <p>vélos disponible: <span id="availability"></span></p>
-            <form>                
+            <div>                
                 <div class="label">
                     <label for="Nom">Nom</label> : <input type="text" placeholder="Duchamps" name="Nom" autofocus  id="lastname" /><br>
                 </div>
@@ -41,21 +83,23 @@
                 </div>
                 <div id="canvas_container" class="none">
                     <canvas id="canvas" width="300" height="300" >Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
-                    <button>Confirmer</button>
+                    <button id="validation">Confirmer</button>
                 </div>
-            </form>
+                <div id="booking_data">Vélo réservé à <span id="adress"></span> par <span id="lastName"></span> <span id="firstName"></span>. Temps restant : <span id="timing">5</span></div>
+            </div>
         </div>
         
     </section>
 
-            <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
            crossorigin=""></script>
-            <script src="./ajax.js"></script>
-            <script src="./map.js"></script>
-            <script src="./storage.js"></script>
-            <script src="./canvas.js"></script>
-            <script src="./init.js"></script>
+    <script src="./ajax.js"></script>
+    <script src="./slider.js"></script>       
+    <script src="./map.js"></script>
+    <script src="./canvas.js"></script>
+    <script src="./timer.js"></script>
+    <script src="./init.js"></script>
             
 
     

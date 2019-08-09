@@ -6,6 +6,7 @@ class Timer {
         this.validation = document.getElementById("validation");
         this.bookingData = document.getElementById("booking_data");
         this.time = document.getElementById("timing");
+        this.canvasContainer = document.getElementById("canvas_container");
         this.startTimer();
     }
 
@@ -32,7 +33,7 @@ class Timer {
 
                 if (this.timerDuration < 0) {
                 this.bookingData.textContent = ("Temps expiré. Reservation annulée.");
-                this.timerDuration = 0;
+                    this.timerDuration = 0;
                 }
             }, 1000);
 
@@ -41,6 +42,8 @@ class Timer {
                 const time1 = new Timer(1200, this.time);
                 this.bookingData.classList.remove("none");
                 this.bookingData.classList.add("display");
+                this.canvasContainer.classList.remove("display");
+                this.canvasContainer.classList.add("none");
             });
     }
 }

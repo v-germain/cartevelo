@@ -1,11 +1,11 @@
 class Slider {
-    constructor(elementImgSlider) {
+    constructor() {
         this.elementImgSlider = document.getElementById("imgSlider");
         this.elementPrev = document.getElementById("prev");
         this.elementNext = document.getElementById("next");
         this.play = document.getElementById("play");
         this.stop = document.getElementById("stop");
-        this.imagesTab = ["images/slide1.jpg", "images/slide2.jpg", "images/slide3.jpg", "images/slide4.jpg"];
+        this.imagesTab = ["images/slide1.jpg", "images/slide2.jpg", "images/slide3.jpg", "images/slide4.jpg", "images/slide5.jpg"];
         this.counter = 0;
         this.interval = 0;
         this.init();
@@ -26,7 +26,7 @@ class Slider {
     }
     start() {
         clearInterval(this.interval);
-        this.interval = setInterval(() => {this.next()}, 3000);   
+        this.interval = setInterval(() => {this.next()}, 5000);   
     }
 
     pause() {
@@ -54,6 +54,6 @@ class Slider {
             this.play.classList.add("display");
             
         });
-        this.interval = setInterval(() => {this.next()}, 3000);
+        this.interval = setInterval(() => {this.next()}, 5000);
     }
 }

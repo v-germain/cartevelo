@@ -14,7 +14,6 @@ class Canvas {
             y: e.offsetY - rectangle.top,
         }   
     }
-
     // création de la fonction pour tracer avec la position de la souris
     signature() {
         this.canvas.addEventListener("mousedown", (e) => {
@@ -24,7 +23,6 @@ class Canvas {
             this.ctx.moveTo(mousePosition.x, mousePosition.y);
             this.ctx.beginPath();
         });
-
         this.canvas.addEventListener("mousemove", (e) => {
             // mousemove + draw = true => lancement de la la fonction
             if (this.draw === true) {
@@ -33,16 +31,14 @@ class Canvas {
                 this.ctx.stroke();
             }
         });
-
         //fin du clique, draw = false, fin de la signature
         this.canvas.addEventListener('mouseup', (e) => {
           this.draw = false;
-        });
-            
+        });     
         document.getElementById("booking").addEventListener("click", () => {
         document.getElementById("canvas_container").classList.remove("none");
         document.getElementById("canvas_container").classList.add("display");
-    })
+    });
 
     }
 }

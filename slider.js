@@ -26,25 +26,11 @@ class Slider {
     }
     start() {
         clearInterval(this.interval);
-        this.interval = setInterval(() => {this.next()}, 3000);
-        this.play.addEventListener("click", () => {
-            console.log("clique!");
-            this.stop.classList.remove("none");
-            this.stop.classList.add("display");
-            this.play.classList.remove("display");
-            this.play.classList.add("none");
-        });    
+        this.interval = setInterval(() => {this.next()}, 3000);   
     }
 
     pause() {
         clearInterval(this.interval);
-        this.stop.addEventListener("click", () => {
-            console.log("click!");
-            this.stop.classList.remove("display");
-            this.stop.classList.add("none");
-            this.play.classList.remove("none");
-            this.play.classList.add("display");
-        });
     }
     init() {
         this.elementNext.addEventListener("click", () => this.next());
@@ -55,9 +41,17 @@ class Slider {
         });
         this.play.addEventListener("click", () => {
             this.start();
+            this.stop.classList.remove("none");
+            this.stop.classList.add("display");
+            this.play.classList.remove("display");
+            this.play.classList.add("none");
         });
         this.stop.addEventListener("click", () => {
             this.pause();
+            this.stop.classList.remove("display");
+            this.stop.classList.add("none");
+            this.play.classList.remove("none");
+            this.play.classList.add("display");
             
         });
         this.interval = setInterval(() => {this.next()}, 3000);

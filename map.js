@@ -21,9 +21,7 @@ class Map {
         ajax.ajaxGet("https://api.jcdecaux.com/vls/v3/stations?contract=nancy&apiKey=c75bc96bb4a5b84123aedf5b20b8fbf3a676e4d3", reponse => {
             const stations = JSON.parse(reponse);
             console.log(stations);
-            stations.forEach(station => {               
-                //console.log(station.name, station.totalStands.availabilities.bikes ); 
-                //console.log(station.position.latitude, station.position.longitude);
+            stations.forEach(station => {
                 const marker = L.marker([station.position.latitude, station.position.longitude]).addTo(this.map);
                 marker.addEventListener("click", () => {
                     document.getElementById("location").textContent = station.address;
@@ -32,21 +30,17 @@ class Map {
                 })             
             });
         });
+        const bookingButton = document.getElementById("booking");
+        bookingButton.addEventListener("click", () => {
+            const lastName = document.getElementById("lastname").value;
+            const firstName = document.getElementById("firstname").value;
+            const localStation = document.getElementById("location").textContent;
+            localStorage.setItem("lastName", lastName);
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("localStation", localStation);
+            console.log(localStorage.getItem("firstName"), localStorage.getItem("lastName"));
+            document.getElementById("canvas_container").classList.remove("none");
+            document.getElementById("canvas_container").classList.add("display");
+        });
     }
 }
-
-/* global sessionStorage */
-
-const bookingButton = document.getElementById("booking");
-
-bookingButton.addEventListener("click", () => {
-    const lastName = document.getElementById("lastname").value;
-    const firstName = document.getElementById("firstname").value;
-    const localStation = document.getElementById("location").value;
-    localStorage.setItem("lastName", lastName);
-    localStorage.setItem("firstName", firstName);
-    localStorage.setItem("location", localStation);
-    console.log(localStorage.getItem("firstName"), localStorage.getItem("lastName"));
-    document.getElementById("canvas_container").classList.remove("none");
-    document.getElementById("canvas_container").classList.add("display");
-});

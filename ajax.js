@@ -16,4 +16,3 @@ class Ajax {
         req.send(null);
     }
 }
-

@@ -11,10 +11,35 @@ header
 	align-items: center;
 	justify-content: space-around;
 	background-color: white;
-    display: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+#banner img {
+    margin-top: 90px;
+    height: 480px;
+    width: 100%;
 }
 
 /* slider */
+
+figure#diaporama {
+    margin-top: 50px;
+}
 
 #slider_container {
     display: flex;
@@ -122,6 +147,13 @@ header
 
 input#firstname {
     width: 120px;
+}
+
+/* canva */
+
+canvas#canvas {
+    border: solid 2px black;
+    border-radius: 2px;
 }
 
 /* signature */

@@ -62,16 +62,16 @@
             <p>vélos disponible: <span id="availability"></span></p>
             <div>                
                 <div class="label">
-                    <label for="Nom">Nom</label> : <input type="text" placeholder="Duchamps" name="Nom" autofocus  id="lastname" /><br>
+                    <label for="Nom">Nom</label> : <input type="text" placeholder="Nom" name="Nom" autofocus  id="lastname" required /><br>
                 </div>
                 <div class="label">
-                    <label for="Prenom">Prénom</label> :<input type="text" placeholder="Jean" name="Prenom" id="firstname" /><br>
+                    <label for="Prenom">Prénom</label> :<input type="text" placeholder="Prénom" name="Prenom" id="firstname" required /><br>
                 </div>
                 <div class="label">
                     <input type="button" value="Réserver" id="booking" />  
                 </div>
                 <div id="canvas_container" class="none">
-                    <canvas id="canvas" width="300" height="300" >Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
+                    <canvas id="canvas" width="250" height="150" >Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
                     <button id="validation">Confirmer</button>
                 </div>
                 <div id="booking_data" class="none">Vélo réservé à <span id="adress"></span> par <span id="lastName"></span> <span id="firstName"></span>. Temps restant : <span id="timing"></span></div>

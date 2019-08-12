@@ -155,6 +155,8 @@ figure#diaporama {
     height: 500px; 
     margin: 30px;
     z-index: 0;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 #encart {
@@ -164,8 +166,9 @@ figure#diaporama {
     height: 370px;
     border: 2px solid black;
     border-radius: 5px;
-    margin: 10px;
-    padding-left: 40px;
+    margin-top: -125px;
+    padding-left: 15px;
+    align-items: center;
 }
 
 .label {
@@ -182,16 +185,24 @@ input#firstname {
 
 /* canva + booking */
 
-canvas#canvas {
+#canvas_container {
     border: solid 2px black;
     border-radius: 5px;
     margin-top: 50px;
-    margin-left: -40px;
+    padding: 5px;
+    background-color: #9dd9ff;
+    margin-left: -8px;
+}
+
+#canvas {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
 }
 
 #booking_data {
     margin-top: 45px;
-    margin-left: -40px;
+    margin-left: -15px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;

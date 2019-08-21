@@ -1,11 +1,11 @@
 // création d'une classe canvas
 class Canvas {
-  constructor() {
-    this.canvas = document.getElementById("canvas");
-    this.ctx = this.canvas.getContext("2d");
-    this.draw = false;
-    this.signature();
-  }
+    constructor() {
+        this.canvas = document.getElementById("canvas");
+        this.ctx = this.canvas.getContext("2d");
+        this.draw = false;
+        this.signature();
+    }
     // récupération de la position de la souris par rapport au viewport
     getMousePosition(e) {
         let rectangle = this.canvas.getBoundingClientRect(e);
@@ -34,11 +34,10 @@ class Canvas {
         //fin du clique, draw = false, fin de la signature
         this.canvas.addEventListener('mouseup', (e) => {
           this.draw = false;
-        });     
+        });             
         document.getElementById("booking").addEventListener("click", () => {
-        document.getElementById("canvas_container").classList.remove("none");
-        document.getElementById("canvas_container").classList.add("display");
-    });
-
+            document.getElementById("canvas_container").classList.remove("none");
+            document.getElementById("canvas_container").classList.add("display");
+        });
     }
 }

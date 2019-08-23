@@ -51,8 +51,7 @@ class Slider {
             this.stop.classList.remove("display");
             this.stop.classList.add("none");
             this.play.classList.remove("none");
-            this.play.classList.add("display");
-            
+            this.play.classList.add("display");   
         });
         this.interval = setInterval(() => {this.next()}, 5000);
     }

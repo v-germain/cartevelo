@@ -11,39 +11,38 @@ class Timer {
     }
 
     startTimer() {
+        const x = setInterval(() => {
+            // initialisation de minutes/secondes afin d'obtenir une conversion des minutes en secondes, tout en gardant un affichage minutes : secondes 
+            this.minutes = parseInt(this.timerDuration / 60, 10);
+            this.seconds = parseInt(this.timerDuration % 60, 10);
 
-            const x = setInterval(() => {
+            this.minutes = this.minutes < 10 ? "0" + this.minutes : this.minutes;
+            this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
 
-                this.minutes = parseInt(this.timerDuration / 60, 10);
-                this.seconds = parseInt(this.timerDuration % 60, 10);
+            sessionStorage.setItem('secondes', this.seconds);
+            sessionStorage.setItem('minutes', this.minutes);
+            sessionStorage.setItem('timerDuration', this.timerDuration);
 
-                this.minutes = this.minutes < 10 ? "0" + this.minutes : this.minutes;
-                this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
+            this.time.textContent = " " + this.minutes + " : " + this.seconds;
+            document.getElementById("adress").textContent = localStorage.getItem("localStation");
+            document.getElementById("firstName").textContent = localStorage.getItem("firstName");
+            document.getElementById("lastName").textContent = localStorage.getItem("lastName");
 
-                sessionStorage.setItem('secondes', this.seconds);
-                sessionStorage.setItem('minutes', this.minutes);
-                sessionStorage.setItem('timerDuration', this.timerDuration);
+            this.timerDuration--;
 
-                this.time.textContent = " " + this.minutes + " : " + this.seconds;
-                document.getElementById("adress").textContent = localStorage.getItem("localStation");
-                document.getElementById("firstName").textContent = localStorage.getItem("firstName");
-                document.getElementById("lastName").textContent = localStorage.getItem("lastName");
+            if (this.timerDuration < 0) {
+            this.bookingData.textContent = ("Temps expiré. Reservation annulée.");
+                this.timerDuration = 0;
+            }
+        }, 1000);
 
-                this.timerDuration--;
-
-                if (this.timerDuration < 0) {
-                this.bookingData.textContent = ("Temps expiré. Reservation annulée.");
-                    this.timerDuration = 0;
-                }
-            }, 1000);
-
-            this.validation.addEventListener("click", (e) => {
-                clearInterval(x);
-                const time1 = new Timer(1200, this.time);
-                this.bookingData.classList.remove("none");
-                this.bookingData.classList.add("display");
-                this.canvasContainer.classList.remove("display");
-                this.canvasContainer.classList.add("none");
-            });
+        this.validation.addEventListener("click", (e) => {
+            clearInterval(x);
+            const time1 = new Timer(1200, this.time);
+            this.bookingData.classList.remove("none");
+            this.bookingData.classList.add("display");
+            this.canvasContainer.classList.remove("display");
+            this.canvasContainer.classList.add("none");
+        });
     }
 }

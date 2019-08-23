@@ -39,6 +39,7 @@ class Canvas {
             document.getElementById("canvas_container").classList.remove("none");
             document.getElementById("canvas_container").classList.add("display");
         });
+        // réintialisation du tracé lors de la validation
         document.getElementById("validation").addEventListener("click", (e) => {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         });

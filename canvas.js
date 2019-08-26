@@ -55,6 +55,7 @@ class Canvas {
             this.ctx.lineWidth = 2;
             this.ctx.moveTo(touchesPosition.x, touchesPosition.y);
             this.ctx.beginPath();
+            e.preventDefault();
         });
         // déplacement sur axe x/y et début du tracé
         this.canvas.addEventListener("touchmove", (e) => {
@@ -62,10 +63,12 @@ class Canvas {
             this.ctx.lineTo(touchesPosition.x, touchesPosition.y);
             this.ctx.stroke();
             this.count++;
+            e.preventDefault();
             });
         // draw = false, fin du trait
         this.canvas.addEventListener("touchend", (e) => {
             this.draw = false;
+            e.preventDefault();
         });
         document.getElementById("validation").addEventListener("click", () => {
             if (this.count === 0) {

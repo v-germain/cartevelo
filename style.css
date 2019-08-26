@@ -27,6 +27,7 @@ header
 #logo h1 {
     margin-left: 20px;
     color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 nav {
@@ -73,6 +74,7 @@ nav a:hover {
 #banner p {
     color: white;
     font-size: 45px;
+    text-shadow: 1px 1px 2px black;
 }
 
 /* slider */
@@ -160,7 +162,7 @@ figure#diaporama {
 }
 
 #map { 
-    width: 68%;
+    width: 70%;
     height: 500px; 
     margin: 30px;
     z-index: 0;
@@ -168,16 +170,18 @@ figure#diaporama {
     border-radius: 5px;
 }
 
-#encart {
-    /*display: flex;
-    flex-direction: column;*/
+/*#encart {
     width: 22%;
     height: 370px;
     border: 2px solid black;
     border-radius: 5px;
-    margin-top: -125px;
     padding-left: 15px;
-    align-items: center;
+}*/
+
+#encart {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .label {
@@ -197,10 +201,9 @@ input#firstname {
 #canvas_container {
     border: solid 2px black;
     border-radius: 5px;
-    margin-top: 50px;
     padding: 5px;
     background-color: #9dd9ff;
-    margin-left: -8px;
+    width: 21%;
 }
 
 #canvas {
@@ -210,11 +213,10 @@ input#firstname {
 }
 
 #booking_data {
-    margin-top: 45px;
-    margin-left: -15px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
+    width: 20%;
 }
 
 /* options class js */
@@ -228,7 +230,6 @@ input#firstname {
 }
 
 footer {
-    margin-top: 200px;
     display: flex;
     justify-content: flex-end;
     align-items: end;
@@ -237,8 +238,114 @@ footer {
     background-image: linear-gradient(to right, rgb(50, 175, 255), white);
 }
 
-footer {
+footer p {
     color: rgb(50, 175, 255);
     font-family: 'Permanent Marker', cursive;
     font-size: x-large;
+    text-shadow: 1px 1px 2px black;
+}
+
+@media screen and (max-width: 840px)
+{
+    ul {
+        justify-content: initial;
+        width: auto;
+    }
+    
+    li {
+        padding: 5px;
+    }
+    
+    #logo img {
+        width: auto;
+    }
+    
+    #banner {
+        height: 215px;
+    }
+    
+    #banner p {
+        font-size: xx-large;
+        text-align: center;
+    }
+    
+    img#imgSlider {
+        width: 100%;
+    }
+    
+        a#next, a#prev {
+        color: black;
+    }
+    
+    a#next:hover, a#prev:hover {
+        color: white;
+    }
+    
+    #map {
+        height: 300px;
+        width: 85%;
+    }
+    
+    #section_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+    
+    #encart {
+        width: 70%;
+        text-align: center;
+    }
+    
+    .label {
+        width: auto;
+        display: block;
+        text-align: center;
+    }
+    
+    #canvas_container {
+        width: auto;
+    }
+    
+    #booking_data {
+        width: auto;
+    }
+    
+    footer {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 690px)
+{
+    ul {
+        padding-right: 10px;
+    }
+    
+    li a {
+        font-size: smaller;
+    }
+    
+    a#stop.display, a#play.display {
+        margin-top: 50px;
+        color: black;
+    }
+    
+    a#stop.display:hover, a#play.display:hover {
+        color:white;
+    } 
+}
+
+@media screen and (max-device-width: 450px) and (orientation: portrait ) 
+{
+    nav {
+        display: none;
+    }
+    
+    a#stop.display, a#play.display {
+        margin-top: 50px;
+        color: white;
+    }
 }

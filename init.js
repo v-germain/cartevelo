@@ -1,5 +1,5 @@
 const map = new Map();
 map.createMarkers();
-const canvas = new Canvas();
-const slider = new Slider();
 const timer = new Timer();
+const canvas = new Canvas(timer);
+const slider = new Slider();

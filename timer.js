@@ -1,17 +1,16 @@
 // Le Timer: creation d'un minuteur de 20 minutes
 
 class Timer {
-    constructor(timerDuration) {
-        this.timerDuration = timerDuration;
-        this.validation = document.getElementById("validation");
+    constructor() {
+        this.timerDuration = null;
         this.bookingData = document.getElementById("booking_data");
         this.time = document.getElementById("timing");
-        this.canvasContainer = document.getElementById("canvas_container");
-        this.startTimer();
+        this.interval = null;
     }
 
-    startTimer() {
-        const x = setInterval(() => {
+    startTimer(timerDuration) {
+        this.timerDuration = timerDuration;
+        this.interval = setInterval(() => {
             // initialisation de minutes/secondes afin d'obtenir une conversion des minutes en secondes, tout en gardant un affichage minutes : secondes 
             this.minutes = parseInt(this.timerDuration / 60, 10);
             this.seconds = parseInt(this.timerDuration % 60, 10);
@@ -35,14 +34,9 @@ class Timer {
                 this.timerDuration = 0;
             }
         }, 1000);
-
-        this.validation.addEventListener("click", (e) => {
-            clearInterval(x);
-            const time1 = new Timer(1200, this.time);
-            this.bookingData.classList.remove("none");
-            this.bookingData.classList.add("display");
-            this.canvasContainer.classList.remove("display");
-            this.canvasContainer.classList.add("none");
-        });
+    }
+    
+    stopTimer() {
+        clearInterval(this.interval);
     }
 }

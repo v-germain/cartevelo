@@ -14,14 +14,14 @@ class Slider {
         this.counter++;
         if (this.counter >= this.imagesTab.length) {
             this.counter = 0;
-        }
+        } // si counter > longueur du tableau, counter = 0 retour au début du tableau
         this.elementImgSlider.src = this.imagesTab[this.counter];
     }
     prev() {
         this.counter--;
         if (this.counter < 0) {
             this.counter = this.imagesTab.length - 1;
-        }
+        } // si counter < 0, counter = longueur du tableau -1 affichage de la derniere slide
         this.elementImgSlider.src = this.imagesTab[this.counter];
     }
     start() {

@@ -55,28 +55,36 @@
 
     <section id="section_2">
         <div id="map"></div>
-        <div id="encart">
+        <form id="encart" class="display" action="" onsubmit="return false" ><!-- -->
+            
             <h2>Détails de la station</h2>
-            <p>Adresse: <span id="location"></span></p>
-            <p>places: <span id="room"></span></p>
-            <p>vélos disponible: <span id="availability"></span></p>
-            <div>                
-                <div class="label">
-                    <label for="Nom">Nom</label> : <input type="text" placeholder="Nom" name="Nom" autofocus  id="lastname" required="" /><br>
-                </div>
-                <div class="label">
-                    <label for="Prenom">Prénom</label> :<input type="text" placeholder="Prénom" name="Prenom" id="firstname" required="" /><br>
-                </div>
-                <div class="label">
-                    <input type="button" value="Réserver" id="booking" />  
-                </div>
-                <div id="canvas_container" class="none">
-                    <canvas id="canvas" width="250" height="150" >Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
-                    <button id="validation">Confirmer</button>
-                </div>
-                <div id="booking_data" class="none">Vélo réservé à <span id="adress"></span> par <span id="lastName"></span> <span id="firstName"></span>. Temps restant : <span id="timing"></span></div>
+            
+            <div id="station_info" class="display">
+                <p>Adresse: <span id="location"></span></p>
+                <p>places: <span id="room"></span></p>
+                <p>vélos disponible: <span id="availability"></span></p>
+                <input type="button" value="Réserver" id="booking1" class="none" />  
             </div>
-        </div>
+            
+            <div id="user_info" class="none">
+                <div class="label">
+                    <label for="Nom">Nom</label> : <input type="text" placeholder="Nom" name="Nom" autofocus  id="lastname" required minlength="2" /><br>
+                </div>
+                <div class="label">
+                    <label for="Prenom">Prénom</label> :<input type="text" placeholder="Prénom" name="Prenom" id="firstname" required minlength="2"/><br>
+                </div>
+                <input type="submit" value="Réserver" id="booking2" />
+            </div>     
+        </form>
+            
+            <div id="canvas_container" class="none">
+                <canvas id="canvas" width="250" height="150" >Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.</canvas>
+                <button id="validation">Confirmer</button>
+            </div>
+            
+            <div id="booking_data" class="none">Vélo réservé à <span id="adress"></span> par <span id="lastName"></span> <span id="firstName"></span>. Temps restant : <span id="timing"></span></div>
+            
+        
         
     </section>
 

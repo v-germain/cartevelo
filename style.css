@@ -41,6 +41,14 @@ ul {
     width: 400px;
 }
 
+li {
+    list-style: none;
+}
+
+nav a:visited {
+    color: inherit;
+}
+
 nav a {
     text-decoration: none;
 }
@@ -52,13 +60,14 @@ nav a:hover {
 #banner {
     font-family: 'Permanent Marker', cursive;
     margin-top: 90px;
-    height: 480px;
+    height: 280px;
     width: 100%;
     background-image: url("images/banner.jpg");
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-position: center;
 }
 
 #banner p {
@@ -160,8 +169,8 @@ figure#diaporama {
 }
 
 #encart {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     width: 22%;
     height: 370px;
     border: 2px solid black;

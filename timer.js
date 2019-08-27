@@ -23,10 +23,6 @@ class Timer {
             sessionStorage.setItem('timerDuration', this.timerDuration);
 
             this.time.textContent = " " + this.minutes + " : " + this.seconds;
-            document.getElementById("adress").textContent = localStorage.getItem("localStation");
-            document.getElementById("firstName").textContent = localStorage.getItem("firstName");
-            document.getElementById("lastName").textContent = localStorage.getItem("lastName");
-
             this.timerDuration--;
 
             if (this.timerDuration < 0) {

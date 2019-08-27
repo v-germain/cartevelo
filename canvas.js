@@ -83,6 +83,9 @@ class Canvas {
                 this.bookingData.classList.add("display");
                 this.canvasContainer.classList.remove("display");
                 this.canvasContainer.classList.add("none");
+                document.getElementById("adress").textContent = localStorage.getItem("localStation");
+                document.getElementById("firstName").textContent = localStorage.getItem("firstName");
+                document.getElementById("lastName").textContent = localStorage.getItem("lastName");
             }
         });
     };

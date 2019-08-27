@@ -170,18 +170,18 @@ figure#diaporama {
     border-radius: 5px;
 }
 
-/*#encart {
-    width: 22%;
-    height: 370px;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding-left: 15px;
-}*/
+#reservationInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 #encart {
     border: 2px solid black;
     padding: 5px;
     border-radius: 5px;
+    width: 330px;
+    margin-bottom: 5px;
 }
 
 .label {
@@ -203,7 +203,7 @@ input#firstname {
     border-radius: 5px;
     padding: 5px;
     background-color: #9dd9ff;
-    width: 21%;
+    width: auto;
 }
 
 #canvas {
@@ -216,7 +216,7 @@ input#firstname {
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
-    width: 20%;
+    width: 330px;
 }
 
 /* options class js */
@@ -273,7 +273,7 @@ footer p {
         width: 100%;
     }
     
-        a#next, a#prev {
+    a#next, a#prev {
         color: black;
     }
     
@@ -295,7 +295,7 @@ footer p {
     }
     
     #encart {
-        width: 70%;
+        width: auto;
         text-align: center;
     }
     
